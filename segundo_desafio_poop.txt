@@ -1,0 +1,108 @@
+perfiles de clientes
+
+Banco
+clase banco:
+	
+	Objetos:
+		Tangibles:
+			-dinero(contabilidad)
+			-empleados
+			-suministros de oficina
+			-telecajeros
+			-cubiculos
+			-tarjetas de credito
+			-chques
+			-chequeras
+			-paredes
+			-ventanas
+			-bombillos
+			-lamparas
+			-sillas
+
+		intengibles:
+			-sistemas operativos
+			-logo
+			-computadoras
+			-informacion de los clientes
+			-personal
+			-información del personal 
+			-credito (contabilidad) 
+			-logo
+			
+			
+		
+	Atributos:
+		-(contabilidad) estado financiero del banco,[coleccion:cuentas contables] dato=alfanumerico-cadena
+		-colores de la fachada dato=alfanumerico-caracter
+		-cantidad de ventanas dato=entero
+		-cantidad de cubiculos dato=entero
+		- ubicación de la sede del banco(datos del banco) dato=alfanumerico-cadena
+		-dispositivos electronicos  dato=logico
+		-sistemas operativos dato=logico
+		cantidad de muebles dato:entero
+		-Reglas del banco(datos del banco) dato:alfanumerico-caracter
+		-fecha de fundacion (datos del banco) dato:entero
+		-cantidad de personal dato:entero
+		-información de contacto(datos del banco)dato:alfanumerico-cadena
+
+	
+clase datos del banco:
+		
+		-informacion del personal dato=alfanumerico-cadena
+		-informacion de los clientes=alfanumerico-cadena
+		-informacion de contacto=alfanumerico-cadena
+		-reglas del banco dato=alfanumerico-caracter
+		-fecha de fundacion dato=entero
+		-ubicación de la sede del banco. dato=alfanumerico-cadena
+
+
+clase contabilidad:
+		-coleccion de: cuentas contables 
+			coleccion de:-activos 
+			coleccion de:-pasivos 
+			coleccion de:-capital 
+			coleccion de:-ingresos 
+			coleccion de:-egresos 
+		
+		-credito 
+		-dinero 
+
+clase muebles
+	atributos:
+	-larga duracion=logico
+	-resistencia al agua:verdadero dato=logico
+	-cantidad de piezas dato=entero
+	- tornillos dato=logico
+	-fijación dato=logico
+	metodos:
+	-guardan cosas
+	-se  transportan
+	-se  fijan.
+
+clase aparatos electricos:
+	atributos:
+	-cantidad de piezas dato=entero
+	- electricidad dato=logico
+	-resistencia al agua:falso
+	-larga duracion =logico
+	- cables dato=logico
+	- tornillos dato=logico
+	-fijación dato=logico
+	metodos:
+	-irradia luz dato=logico
+	-se apagan si electricidad es:falso
+	-guardan cosas
+	-se transportan
+	-se fijan
+
+super-clase moviliario, hereda de:"muebles+aparatos electricos"
+	Atributos:
+		-larga duracion dato=logico
+		-cantidad de piezas dato=entero
+		- tornillos dato=logico
+		-resistencia al agua (falso o verdadero) dato=logico
+		-
+	metodos:
+		-guardan cosas
+		-se transportan
+		-se fijan
