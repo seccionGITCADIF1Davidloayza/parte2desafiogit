@@ -1,108 +1,146 @@
-perfiles de clientes
 
-Banco
+
 clase banco:
-	
+respuesta 1)	
 	Objetos:
 		Tangibles:
 			-dinero(contabilidad)
 			-empleados
 			-suministros de oficina
-			-telecajeros
-			-cubiculos
+			-telecajeros (aparatos electronicos-moviliario)
+			-cubiculos (muebles-moviliario)
 			-tarjetas de credito
 			-chques
 			-chequeras
 			-paredes
 			-ventanas
-			-bombillos
-			-lamparas
-			-sillas
+			-bombillos (aparatos electricos-moviliario)
+			-lamparas (aparatos electricos-moviliario)
+			-sillas (muebles-mobiliario)
 
-		intengibles:
+		intangibles:
 			-sistemas operativos
 			-logo
-			-computadoras
-			-informacion de los clientes
+			-computadoras (aparatos electronicos)
 			-personal
-			-información del personal 
 			-credito (contabilidad) 
 			-logo
+			-servicios (respuesta 3) datos bancarios)
+			-base de datos
 			
 			
-		
+respuesta 2)		
 	Atributos:
-		-(contabilidad) estado financiero del banco,[coleccion:cuentas contables] dato=alfanumerico-cadena
-		-colores de la fachada dato=alfanumerico-caracter
+		-(contabilidad) estado financiero del banco,[respuesta 4) coleccion:cuentas contables] dato=real
 		-cantidad de ventanas dato=entero
 		-cantidad de cubiculos dato=entero
-		- ubicación de la sede del banco(datos del banco) dato=alfanumerico-cadena
-		-dispositivos electronicos  dato=logico
-		-sistemas operativos dato=logico
+		- ubicación de la sede del banco(respuesta3) datos bancarios) dato=alfanumerico-cadena
+		-cantidad de sucursales (respuesta3) datos bancarios) dato=entero
 		cantidad de muebles dato:entero
-		-Reglas del banco(datos del banco) dato:alfanumerico-caracter
-		-fecha de fundacion (datos del banco) dato:entero
+		-Reglas del banco(respuesta3) datos bancarios) dato:alfanumerico-caracter
+		-fecha de fundacion (respuesta3) datos bancarios) dato:entero
 		-cantidad de personal dato:entero
-		-información de contacto(datos del banco)dato:alfanumerico-cadena
-
-	
-clase datos del banco:
+		-telefono dato=entero (respuesta3) datos bancarios)
+		-correo electronico respuesta (respuesta3 datos bancarios) dato=alfanumerico
 		
-		-informacion del personal dato=alfanumerico-cadena
-		-informacion de los clientes=alfanumerico-cadena
-		-informacion de contacto=alfanumerico-cadena
-		-reglas del banco dato=alfanumerico-caracter
+
+respuesta3)	
+clase datos bancarios:
+
+	atributos
+
 		-fecha de fundacion dato=entero
 		-ubicación de la sede del banco. dato=alfanumerico-cadena
+		-cantidad de sucursales	dato=entero	
 
+	objetos
+		intangibles
+		-telefono:entero
+		-correo electronico=alfanumerico
+		-servicios
+		--reglas del banco dato=alfanumerico-caracter
 
+respuesta 4)
 clase contabilidad:
-		-coleccion de: cuentas contables 
-			coleccion de:-activos 
-			coleccion de:-pasivos 
-			coleccion de:-capital 
-			coleccion de:-ingresos 
-			coleccion de:-egresos 
+	aributo
+	-estado financiero del banco dato=real
+	
+	objetos
+		tangibles:
+		-	dinero	 
+	
+		intangibles:
+		-credito
 		
-		-credito 
-		-dinero 
+	coleccion: cuentas contables 
+			
+		coleccion de:-activos 
+		coleccion de:-pasivos 
+		coleccion de:-capital 
+		coleccion de:-ingresos 
+		coleccion de:-egresos 
+		
+		 
+		
 
-clase muebles
-	atributos:
-	-larga duracion=logico
-	-resistencia al agua:verdadero dato=logico
-	-cantidad de piezas dato=entero
-	- tornillos dato=logico
-	-fijación dato=logico
-	metodos:
-	-guardan cosas
-	-se  transportan
-	-se  fijan.
 
-clase aparatos electricos:
-	atributos:
-	-cantidad de piezas dato=entero
-	- electricidad dato=logico
-	-resistencia al agua:falso
-	-larga duracion =logico
-	- cables dato=logico
-	- tornillos dato=logico
-	-fijación dato=logico
-	metodos:
-	-irradia luz dato=logico
-	-se apagan si electricidad es:falso
-	-guardan cosas
-	-se transportan
-	-se fijan
-
-super-clase moviliario, hereda de:"muebles+aparatos electricos"
+respuesta 5)
+super-clase moviliario (muebles+aparatos electronicos:
 	Atributos:
 		-larga duracion dato=logico
 		-cantidad de piezas dato=entero
 		- tornillos dato=logico
 		-resistencia al agua (falso o verdadero) dato=logico
-		-
 	metodos:
-		-guardan cosas
+		-guardan objetos
 		-se transportan
 		-se fijan
+
+clase muebles, hereda de:moviliario
+	atributos:
+	-larga duracion=logico
+	-resistencia al agua:verdadero dato=logico
+	-cantidad de piezas dato=entero
+	- atornillado dato=logico
+	-fijación dato=logico
+	metodos:
+	-guardan cobjetos tangibles
+	-se  transportan
+	-se  fijan.
+
+clase aparatos electricos, hereda de moviliario:
+	atributos:
+		-cantidad de piezas dato=entero
+		- electricidad dato=logico
+		-resistencia al agua:falso dato=logico
+		-larga duracion =logico
+		- cableado dato=logico
+		- atornillado dato=logico
+		-fijación dato=logico
+	
+	metodos:
+		-irradia luz dato=logico
+		-se apagan si electricidad es:falso
+		-guardan objetos tangibles
+		-se transportan
+		-se fijan
+
+sub-clase aparatos electronicos hereda de:aparatos electricos
+	atributos
+		-cantidad de piezas dato=entero
+		-electricidad dato=logico
+		-resistencia al agua dato=logico
+		-larga duración dato=logico
+		-cableado dato=logico
+		-atornillado dato=logico
+		-sistema operativo dato=logico
+	metodos:
+	-guardan objetos tangibles
+	-guardan objetos intangibles
+	-se transportan
+	-se fijan
+	-se conectan con la base de datos
+
+
+
+
